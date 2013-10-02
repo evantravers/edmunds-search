@@ -1,0 +1,6 @@
+.haeder, .main, .footer {
+  @include grid-row();
+}
+.article {
+  @include grid-column(12);
+}
