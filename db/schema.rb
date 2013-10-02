@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20131002174037) do
 
   create_table "searches", force: true do |t|
     t.string   "vin"
-    t.text     "attributes"
+    t.text     "vehicle_attributes"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

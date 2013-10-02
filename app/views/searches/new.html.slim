@@ -1,4 +1,4 @@
-= form_for '/search' do |f|
-  = f.text_field :vin_number
-  = f.submit 'Search!', class: 'button'
+= form_tag search_path do |f|
+  = text_field_tag :vin
+  = submit_tag 'Search!', class: 'button'
 

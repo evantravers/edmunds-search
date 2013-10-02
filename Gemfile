@@ -31,8 +31,12 @@ gem 'slim'
 gem 'compass-rails'
 gem 'zurb-foundation'
 
+# ain't no party like a
+gem 'httparty'
+
 group :development do
   gem 'pry-rails'
   gem 'binding_of_caller'
   gem 'better_errors'
+  gem 'dotenv'
 end

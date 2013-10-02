@@ -49,10 +49,14 @@ GEM
     compass-rails (1.0.3)
       compass (>= 0.12.2, < 0.14)
     debug_inspector (0.0.2)
+    dotenv (0.9.0)
     erubis (2.7.0)
     execjs (2.0.2)
     fssm (0.2.10)
     hike (1.2.3)
+    httparty (0.11.0)
+      multi_json (~> 1.0)
+      multi_xml (>= 0.5.2)
     i18n (0.6.5)
     jquery-rails (3.0.4)
       railties (>= 3.0, < 5.0)
@@ -65,6 +69,7 @@ GEM
     mime-types (1.25)
     minitest (4.7.5)
     multi_json (1.8.0)
+    multi_xml (0.5.5)
     pg (0.17.0)
     polyglot (0.3.3)
     pry (0.9.12.2)
@@ -138,6 +143,8 @@ DEPENDENCIES
   binding_of_caller
   coffee-rails (~> 4.0.0)
   compass-rails
+  dotenv
+  httparty
   jquery-rails
   pg
   pry-rails
