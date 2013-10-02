@@ -7,7 +7,6 @@ class SearchesController < ApplicationController
     end
 
     @new_search = Search.new( vin: vin, vehicle_attributes: vehicle_attributes )
-    binding.pry
   end
 
   private
