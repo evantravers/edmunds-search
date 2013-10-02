@@ -1,16 +1,13 @@
 class SearchesController < ApplicationController
   def search
-    # makes a squishvin
-    # http://developer.edmunds.com/api-documentation/vehicle/spec_squishvin/v1/
+    vin = vin_squish(params[:vin])
+    res = HTTParty.get("https://api.edmunds.com/api/vehicle/v2/squishvins/#{vin}/?fmt=json&api_key=#{ENV['edmunds_key']}").to_hash
+    if res
+      vehicle_attributes = res
+    end
+
+    @new_search = Search.new( vin: vin, vehicle_attributes: vehicle_attributes )
     binding.pry
-    new_search = Search.new(vin_squish(params[:vin]))
-    response = HTTParty.get("https://api.edmunds.com/api/vehicle/v2/squishvins/#{new_search.vin}/?fmt=json&api_key=#{ENV['edmunds_key']}")
-    if response
-      new_search.vehicle_attributes = response
-    end
-    if new_search.save
-      render 'results'
-    end
   end
 
   private
