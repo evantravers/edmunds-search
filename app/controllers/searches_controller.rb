@@ -3,7 +3,7 @@ class SearchesController < ApplicationController
     vin = vin_squish(params[:vin])
     res = HTTParty.get("https://api.edmunds.com/api/vehicle/v2/squishvins/#{vin}/?fmt=json&api_key=#{ENV['edmunds_key']}").to_hash
     if res['status']
-      flash[:alert]='VIN not found!'
+      flash.now[:alert]='VIN not found!'
       render 'search'
     else
       vehicle_attributes = res
