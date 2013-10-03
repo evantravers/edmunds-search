@@ -46,7 +46,7 @@ GEM
       chunky_png (~> 1.2)
       fssm (>= 0.2.7)
       sass (~> 3.1)
-    compass-rails (1.0.3)
+    compass-rails (2.0.alpha.0)
       compass (>= 0.12.2, < 0.14)
     debug_inspector (0.0.2)
     dotenv (0.9.0)
@@ -147,7 +147,7 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   coffee-rails (~> 4.0.0)
-  compass-rails
+  compass-rails (~> 2.0.alpha.0)
   dotenv
   httparty
   jquery-rails

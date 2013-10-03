@@ -1,6 +1,11 @@
 .header, .main, .footer {
   @include grid-row();
 }
+.header {
+  > div {
+    @include grid-column(12);
+  }
+}
 .article {
   @include grid-column(12);
 }

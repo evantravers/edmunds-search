@@ -6,6 +6,10 @@ html
     = csrf_meta_tags
   body
     .header
+      div
+        h1
+          | VIN search 
+          small powered by #{link_to 'edmunds.com', 'http://edmunds.com'}
     .main
       .article
         = render 'errors'

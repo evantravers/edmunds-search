@@ -29,7 +29,7 @@ end
 
 # formerly the assets section
 gem 'slim'
-gem 'compass-rails'
+gem 'compass-rails', "~> 2.0.alpha.0"
 gem 'zurb-foundation'
 
 # ain't no party like a
