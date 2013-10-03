@@ -5,7 +5,11 @@ class Search < ActiveRecord::Base
   # make magic methods to grab vehicle information
   def method_missing(method_name, *arguments, &block)
     if method_name.to_s =~ /vehicle_(.*)/
-      self.vehicle_attributes[$1]['name']
+      begin
+        self.vehicle_attributes.fetch($1).fetch('name')
+      rescue KeyError
+        super
+      end
     else
       super
     end
