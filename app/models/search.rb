@@ -13,14 +13,12 @@ class Search < ActiveRecord::Base
   # make magic methods to grab vehicle information
   def method_missing(method_name, *arguments, &block)
     if method_name.to_s =~ /\Avehicle_(.*)/
-      begin
-        @vehicle_attributes.fetch($1).fetch('name')
-      rescue KeyError
-        super
-      end
+      @vehicle_attributes.fetch($1).fetch('name')
     else
       super
     end
+  rescue
+    super
   end
 
   def respond_to_missing?(method_name, include_private = false)
