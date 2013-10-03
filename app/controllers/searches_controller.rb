@@ -9,6 +9,17 @@ class SearchesController < ApplicationController
     @new_search = Search.new( vin: vin, vehicle_attributes: vehicle_attributes )
   end
 
+  def save
+    if @search.save
+      flash[:notice] = "Saved!"
+    end
+    render 'search'
+  end
+
+  def index
+    @searches = Search.all
+  end
+
   private
 
   # makes a squishvin
