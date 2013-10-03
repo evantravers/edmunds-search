@@ -1,5 +1,5 @@
 class SearchesController < ApplicationController
-  def search
+  def api
     vin = vin_squish(params[:vin])
     res = HTTParty.get("https://api.edmunds.com/api/vehicle/v2/squishvins/#{vin}/?fmt=json&api_key=#{ENV['edmunds_key']}").to_hash
     if res
@@ -7,17 +7,7 @@ class SearchesController < ApplicationController
     end
 
     @new_search = Search.new( vin: vin, vehicle_attributes: vehicle_attributes )
-  end
-
-  def save
-    if @search.save
-      flash[:notice] = "Saved!"
-    end
-    render 'search'
-  end
-
-  def index
-    @searches = Search.all
+    render 'results'
   end
 
   private

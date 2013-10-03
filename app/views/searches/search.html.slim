@@ -1,7 +1,3 @@
-h1= @new_search.vin
-
-p found what you like?
-p = link_to 'save this listing', search_save_path(@new_search)
-
-p=@new_search.vehicle_attributes
-
+= form_tag '/' do |f|
+  = text_field_tag :vin
+  = submit_tag 'Search!', class: 'button'
