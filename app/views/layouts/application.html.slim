@@ -8,8 +8,7 @@ html
     .header
     .main
       .article
-        - if flash[:notice]
-          = flash[:notice]
+        = render 'errors'
         = yield
     .footer
 
