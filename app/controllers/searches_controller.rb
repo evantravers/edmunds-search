@@ -13,12 +13,19 @@ class SearchesController < ApplicationController
     end
   end
 
+  def save(search)
+    if search.save
+      flash.now[:notice]='Saved!'
+    end
+  end
+
   private
 
   # makes a squishvin
   # http://developer.edmunds.com/api-documentation/vehicle/spec_squishvin/v1/
   def vin_squish(vin_num)
     if vin_num.size < 11
+      # this is to go ahead and query the API, letting them handle the error. :P
       return '1000000000A'
     end
     vin = vin_num[0,11]
