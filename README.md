@@ -7,6 +7,6 @@ Using httparty to access the edmund's api, to search for vehicle by VIN, and ret
 2. Add a heroku remote, and go!
 
 - [x] build a simple form that returns results from the api
-- [ ] fix the tests
 - [x] add validations
-- [ ] make it pretty
+- [x] make it pretty
+- [ ] fix the tests
